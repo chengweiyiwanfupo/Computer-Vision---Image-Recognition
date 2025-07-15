@@ -1,0 +1,29 @@
+segformer环境配置：
+
+第一步：创建虚拟环境segformer-py38，加入jupyter notebook内核
+	conda create -n segformer-py38-2 python=3.8 -y
+	conda activate segformer-py38-2
+	pip install ipykernel
+	python -m ipykernel install --user --name segformer-py38-2 --display-name "Python (segformer-py38-2)"
+
+第二步：安装PyTorch 2.0 + CUDA 11.8
+	conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+
+第三步：安装 mmcv（和 PyTorch/CUDA 兼容版本）
+pip install mmcv==2.0.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.0/index.html
+
+第四步：从源码安装 mmsegmentation
+git clone https://github.com/open-mmlab/mmsegmentation.git
+cd mmsegmentation
+pip install -e .
+
+git clone https://github.com/open-mmlab/mmsegmentation.git "D:\\jupyter notebook\\SegFormer"
+cd/d "D:\\jupyter notebook\\SegFormer"
+pip install -e .
+
+
+
+
+
+
+python -c "import torch; import mmcv; import mmseg; import mmengine; print(torch.__version__, mmcv.__version__, mmseg.__version__, mmengine.__version__)"
